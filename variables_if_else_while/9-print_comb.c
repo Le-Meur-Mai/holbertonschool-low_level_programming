@@ -12,11 +12,21 @@ int main(void)
 {
 	char i = '0';
 
-	do {
+	while (i <= '9')
+	{
 		putchar(i);
-		putchar(',');
-		putchar(' ');
-		i++;
-	} while (i <= '9');
+
+		if (i < '9')
+		{
+			putchar(',');
+			putchar(' ');
+			i++;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	putchar('\n');
 	return (0);
 }
