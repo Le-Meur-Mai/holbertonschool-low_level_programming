@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
  * main - Entry point
@@ -6,18 +6,15 @@
  * Return: Always 0 (Success)
  */
 
-
-int main(void)
+void print_alphabet(void)
 
 {
-_putchar(i) = 'a';
+	char(i) = 'a';
 
 	do {
-		_putchar(i);
+	putchar(i);
 		i++;
 	} while (i <= 'z');
 
-		_putchar('\n');
-
-	return (0);
+	putchar('\n');
 	}
