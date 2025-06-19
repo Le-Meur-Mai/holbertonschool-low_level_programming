@@ -12,7 +12,6 @@ void print_alphabet_x10(void)
 
 	do {
 		print_alphabet();
-		_putchar('\n');
 		i++;
 	} while (i <= 10);
 	}
