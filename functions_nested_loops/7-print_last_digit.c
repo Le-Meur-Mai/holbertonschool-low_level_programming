@@ -4,12 +4,13 @@
 /**
  * print_last_digit- print
  * @r: Whats have to be checked.
+ * @n - result
  * absolute_value : read the name
  * Return: The absolute value of 'n'
  */
 
-int print_last_digit(int r)
+int print_last_digit(int n)
 
 {
-	return ((r % 10));
+	return (n % 10);
 }
