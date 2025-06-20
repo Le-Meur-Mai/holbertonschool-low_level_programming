@@ -4,7 +4,7 @@
 /**
  * print_last_digit- print
  * @r: Whats have to be checked.
- * @n - result
+ * @n: result
  * absolute_value : read the name
  * Return: The absolute value of 'n'
  */
