@@ -35,6 +35,7 @@ void times_table(void)
 		}
 		else if (result ==9 || (result < 9 && b == 9))
 		{
+			_putchar(' ');
 			_putchar(result + '0');
 		}
 		else
