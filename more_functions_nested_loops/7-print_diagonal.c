@@ -18,7 +18,7 @@ void print_diagonal(int n)
 	{
 		for (nb_column = 0 ; nb_column < n ; nb_column++)
 		{
-			if (nb_space > 0 ) 
+			if (nb_space > 0)
 			{
 				for (space = 0 ; space < nb_space; space++)
 				{
