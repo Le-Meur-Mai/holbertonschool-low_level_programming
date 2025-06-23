@@ -12,16 +12,23 @@ void print_diagonal(int n)
 {
 	int nb_space = 0;
 	int nb_column;
+	int space;
 
 	if (n > 0)
 	{
 		for (nb_column = 0 ; nb_column < n ; nb_column++)
 		{
-			_putchar(' ');
-			nb_space++;
-		}
+			if (nb_space > 0 ) 
+			{
+				for (space = 0 ; space <= nb_space; space++)
+				{
+					_putchar(' ');
+				}
+			}
 		_putchar('\\');
 		_putchar('\n');
+		nb_space++;
+		}
 	}
 	else if (n <= 0)
 	{
