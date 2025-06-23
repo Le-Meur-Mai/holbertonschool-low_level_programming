@@ -18,7 +18,7 @@ int main(void)
 		{
 			printf("FizzBuzz ");
 		}
-		else if ((nb % 5) == 0)
+		else if ((nb % 5) == 0 && nb != 100)
 		{
 			printf("Buzz ");
 		}
