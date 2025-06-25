@@ -1,9 +1,11 @@
 #include "main.h"
 /**
-  *
-  *
-  *
-  *
+  * rev_string- Reverse a string
+  * rev_string: Reverse a string
+  * @s: string of characters
+  * debut: start of th string
+  * fin: end of the string
+  * moitie: half of the string
   **/
 
 void rev_string(char *s)
