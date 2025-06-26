@@ -14,7 +14,7 @@ int _atoi(char *s)
 {
 	int i;
 	int operator = 0;
-	int numbers = 0;
+	unsigned int numbers = 0;
 
 	for (i = 0; s[i] && !(s[i] >= '0' && s[i] <= '9') ; i++)
 	{
