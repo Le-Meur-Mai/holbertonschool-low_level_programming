@@ -13,16 +13,16 @@ void print_array(int *a, int n)
 
 {
 	int counting = 0;
-	int end = n - 1;
+	n = n - 1;
 
-	for (; a[counting] ; counting++)
+	for ( ; a[counting] < n ; counting++)
 	{
-		if (a[counting] != a[end])
+		if (a[counting] != a[n])
 		{
 			printf("%d, ", a[counting]);
 		}
 
-		else if (a[counting] == a[end])
+		else if (a[counting] == a[n])
 		{
 			printf("%d", a[counting]);
 		}
