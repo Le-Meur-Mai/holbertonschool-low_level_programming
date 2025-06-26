@@ -15,7 +15,7 @@ void print_array(int *a, int n)
 	int counting = 0;
 	int end = n - 1;
 
-	for (; a[counting] != '\0' ; counting++)
+	for (; a[counting] ; counting++)
 	{
 		if (a[counting] != a[end])
 		{
