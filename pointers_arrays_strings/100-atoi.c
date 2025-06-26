@@ -1,12 +1,12 @@
 #include "main.h"
 /**
-  *
-  *
-  *
-  *
-  *
-  *
-  *
+  * _atoi- print the numerical value of a string
+  * _atoi: print the numerical value of a string
+  * @: The string in question
+  * i: counting 
+  * operator: determine if the number is positive or negative
+  * numbers: the numbers of the numerical value of the string is here
+  * Return: the numerical value of a string
   **/
 
 int _atoi(char *s)
@@ -14,9 +14,9 @@ int _atoi(char *s)
 {
 	int i;
 	int operator = 0;
-	int numbers;
+	int numbers = 0;
 
-	for (i = 0; s[i] && s[i] >= 0 && s[i] <= 9 ; i++)
+	for (i = 0; s[i] && !(s[i] >= '0' && s[i] <= '9') ; i++)
 	{
 		if (s[i] == '-')
 		{
@@ -24,11 +24,9 @@ int _atoi(char *s)
 		}
 	}
 
-	numbers = 0;
-
-	for (; s[i] >= 0 && s[i] <= 9 ; i++)
+	for (; s[i] >= '0' && s[i] <= '9' ; i++)
 	{
-		numbers = (numbers * 10) + (s[i] - 0);
+		numbers = (numbers * 10) + (s[i] - '0');
 	}
 	if ((operator % 2) != 0)
 	{
