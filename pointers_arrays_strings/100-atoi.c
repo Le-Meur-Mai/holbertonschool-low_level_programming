@@ -2,8 +2,8 @@
 /**
   * _atoi- print the numerical value of a string
   * _atoi: print the numerical value of a string
-  * @: The string in question
-  * i: counting 
+  * @s: The string in question
+  * i: counting
   * operator: determine if the number is positive or negative
   * numbers: the numbers of the numerical value of the string is here
   * Return: the numerical value of a string
