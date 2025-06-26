@@ -6,13 +6,13 @@
   * @a: array
   * @n: length of the array
   * counting: read the array
-  * end: last element of the array
   **/
 
 void print_array(int *a, int n)
 
 {
 	int counting;
+
 	n = n - 1;
 
 	for (counting = 0 ; counting <= n  ; counting++)
