@@ -19,8 +19,10 @@ char *cap_string(char *str)
 	int j;
 	int k;
 
-	str[0] = str[0] - 32;
-
+	if (str[0] >= 'a' && str[0] <= 'z')
+	{
+		str[0] = str[0] - 32;
+	}
 	for (; str[i] ; i++)
 	{
 		for (j = 0 ; sep[j] ; j++)
