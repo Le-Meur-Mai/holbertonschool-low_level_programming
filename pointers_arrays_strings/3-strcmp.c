@@ -4,8 +4,6 @@
   * _strcmp: difference between two strings
   * @s1: first string
   * @s2: second string
-  * s1_length: length of s1
-  * s2_length: length of s2
   * i: counting
   * difference: value of the difference between the two strings
   * Return: return the value of difference
