@@ -4,6 +4,7 @@
   * cap_string- print an uppercase letter for the first letter of a word
   * cap_string: print an uppercase letter at the beginnig of a word
   * @str: string
+  * sep: string of separators
   * i: counting str
   * j: counting separator
   * k: replace lowercase letter into uppercase letter
@@ -14,15 +15,17 @@ char *cap_string(char *str)
 
 {
 	int i = 0;
-	char separator[] = { ' ', '	', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}', '\0' };
+	char sep[] = { ' ', '	', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}', '\0' };
 	int j;
 	int k;
 
+	str[0] = str[0] - 32;
+
 	for (; str[i] ; i++)
 	{
-		for (j = 0 ; separator[j] ; j++)
+		for (j = 0 ; sep[j] ; j++)
 		{
-			if (str[i] == separator[j])
+			if (str[i] == sep[j])
 			{
 				k = i + 1;
 				if (str[k] >= 'a' && str[k] <= 'z')
