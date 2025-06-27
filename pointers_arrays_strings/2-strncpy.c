@@ -19,17 +19,16 @@ char *_strncpy(char *dest, char *src, int n)
 	for (i = 0 ; src[i] != '\0' ; i++)
 	{
 	}
-
 	if (i >= n)
 	{
-		for (copy = 0 ; copy <= n ; copy++)
+		for (copy = 0 ; copy < n ; copy++)
 		{
 		dest[copy] = src[copy];
 		}
 	}
 	else if (i < n)
 	{
-		for (copy = 0 ; copy <= i ; copy++)
+		for (copy = 0 ; copy < i ; copy++)
 		{
 			dest[copy] = src[copy];
 		}
