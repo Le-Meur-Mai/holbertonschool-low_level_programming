@@ -1,10 +1,8 @@
 #include "main.h"
 /**
-  *
-  *
-  *
-  *
-  *
+  * print_chessboard- print a bi-dimensionnal array
+  * print_chessboard: print a bi-dimensionnal array
+  * @a: array
   **/
 
 void print_chessboard(char (*a)[8])
