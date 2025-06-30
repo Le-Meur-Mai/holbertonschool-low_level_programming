@@ -26,11 +26,11 @@ char *_strstr(char *haystack, char *needle)
 			start = &haystack[i];
 			h = i;
 
-			for (j = 0; needle[j] != haystack[h] && j < length_of_needle ; j++)
+			for (j = 0; needle[j] == haystack[h] && j < length_of_needle ; j++)
 			{
 				h++;
 			}
-			if (j == (length_of_needle - 1) || needle[j] == haystack[h])
+			if (j == length_of_needle)
 			{
 				break;
 			}
