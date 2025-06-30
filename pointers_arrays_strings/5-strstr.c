@@ -12,12 +12,14 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i = 0;
 	int j = 0;
+	int h = 0;
 	int length_of_needle = 0;
 	char *start;
 
 	for (; needle[length_of_needle] ; length_of_needle++)
 	{
 	}
+
 	length_of_needle = length_of_needle - 1;
 
 	for (; haystack[i] ; i++)
@@ -25,11 +27,13 @@ char *_strstr(char *haystack, char *needle)
 		if (haystack[i] == needle[0])
 		{
 			start = &haystack[i];
-			for (j = 0; needle[j] != haystack[i] || j != length_of_needle ; j++)
+			h = i;
+
+			for (j = 0; needle[j] != haystack[h] || j != length_of_needle ; j++)
 			{
-				i++;
+				h++;
 			}
-			if (j == length_of_needle || needle[j] == haystack[i])
+			if (j == length_of_needle || needle[j] == haystack[h])
 			{
 				break;
 			}
@@ -39,5 +43,8 @@ char *_strstr(char *haystack, char *needle)
 	{
 		return (0);
 	}
+	else
+	{
 	return (start);
+	}
 }
