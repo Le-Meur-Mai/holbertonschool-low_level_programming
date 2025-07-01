@@ -19,10 +19,10 @@ void print_diagsums(int *a, int size)
 	{
 		resultD1 = a[i * size + i] + resultD1;
 	}
-	for (i = 0 ; j >= 0 ; j--)
+	for (i = 0 ; i != size ; j--)
 	{
 		resultD2 = a[i * size + j] + resultD2;
 		i++;
 	}
-	printf("%d, %d \n", resultD1, resultD2);
+	printf("%d, %d\n", resultD1, resultD2);
 }
