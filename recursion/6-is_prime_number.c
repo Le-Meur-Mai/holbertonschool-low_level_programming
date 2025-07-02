@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
-  *
-  *
-  *
-  *
-  *
+  * is_prime_number- print 1 if n is a prime number
+  * is_prime_number: print 1 if n is a prime number
+  * @n: number to verify
+  * Return: 1 for prime number, 0 if not
   **/
 
 int is_prime_number(int n)
