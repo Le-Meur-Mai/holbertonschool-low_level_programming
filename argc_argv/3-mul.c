@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	long int nb1, nb2;
 	int result;
 
-	if (argc < 2)
+	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
