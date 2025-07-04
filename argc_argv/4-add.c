@@ -12,10 +12,11 @@
 
 int main(int argc, char *argv[])
 {
-	int i = 0, j = 0;
+	int i = 1, j = 0;
 	long int nb;
 	int result = 0;
 	int length;
+	char *ptr = NULL;
 
 	if (argc == 1)
 	{
@@ -25,10 +26,11 @@ int main(int argc, char *argv[])
 	for (; i < argc ; i++)
 	{
 		length = strlen(argv[i]);
+		ptr = argv[i];
 
-		for (j = 0; j == length ; j++)
+		for (j = 0; j != length ; j++)
 		{
-		if (!isdigit(argv[j]))
+		if (!isdigit(ptr[j]))
 		{
 			printf("Error\n");
 			return (1);
