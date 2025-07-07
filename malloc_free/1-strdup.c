@@ -22,7 +22,7 @@ for (; str[i] ; i++)
 {
 }
 
-copy = malloc (sizeof(char) * (i - 1));
+copy = malloc (sizeof(char) * i);
 
 if (copy == NULL)
 {
