@@ -2,17 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *
- *
- *
- *
+ * alloc_grid- create a two dimensional array with dynamic allocation
+ * alloc_grid: create a two dimensional array with dynamic allocation
+ * @width: width of the array
+ * @height: height of the array
+ * Return: pointer to a two dimensional array
  */
 int **alloc_grid(int width, int height)
 {
 	int i;
 	int j = 0;
-int *damier2;
-int **ptr;
+	int **damier2;
 
 if (width <= 0 || height <= 0)
 {
@@ -27,23 +27,19 @@ if (damier2 == NULL)
 
 	for (i = 0 ; i < height ; i++)
 	{
-		damier2[i] = malloc(sizeof(int) * (width + 1));
+		damier2[i] = malloc(sizeof(int) * (width));
 
 		if (damier2[i] == NULL)
 		{
-			free (damier2);
-			free (damier2[i]);
 			return (NULL);
 		}
 	}
-for (; damier[j] ; j++)
+for (i = 0 ; i < height ; i++)
 {
-	for (i = 0 ; damier[j][i] != '\0' ; i++)
+	for (j = 0 ; j < width ; j++)
 	{
-		damier2[j][i] = 0;
+		damier2[i][j] = 0;
 	}
 }
-ptr = &damier2;
-
-return (ptr);
+return (damier2);
 }
