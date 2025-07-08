@@ -31,7 +31,7 @@ if (damier2 == NULL)
 
 		if (damier2[i] == NULL)
 		{
-			for (j = 0 ; j > i ; j++)
+			for (j = 0 ; j <= i ; j++)
 			{
 				free(damier2[j]);
 			}
