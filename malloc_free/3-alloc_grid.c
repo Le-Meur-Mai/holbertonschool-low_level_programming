@@ -27,7 +27,7 @@ if (damier2 == NULL)
 
 	for (i = 0 ; i < height ; i++)
 	{
-		damier2[i] = malloc(sizeof(int) * (width + 1));
+		damier2[i] = malloc(sizeof(int) * width);
 
 		if (damier2[i] == NULL)
 		{
