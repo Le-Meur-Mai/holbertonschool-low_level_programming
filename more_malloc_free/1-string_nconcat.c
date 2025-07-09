@@ -31,12 +31,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (j <= n)
 	{
-		fusion = malloc(h + 2);
+		n = j;
 	}
-	else if (j > n)
-	{
-		fusion = malloc((h - n) + 2);
-	}
+	fusion = malloc((i + n) + 1);
+
 	if (fusion == NULL)
 	{
 		return (NULL);
@@ -45,9 +43,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		fusion[h] = s1[h];
 	}
-	for (i = 0 ; i < n && i < j ; i++)
+	for (j = 0 ; j < n; j++)
 	{
-		fusion[h] = s2[i];
+		fusion[h] = s2[j];
 		h++;
 	}
 	return (fusion);
