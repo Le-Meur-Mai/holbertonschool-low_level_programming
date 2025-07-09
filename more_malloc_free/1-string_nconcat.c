@@ -45,7 +45,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		fusion[h] = s2[j];
 		h++;
 	}
-	fusion[h + 1] = '\0';
+	fusion[h] = '\0';
 
 	return (fusion);
 }
