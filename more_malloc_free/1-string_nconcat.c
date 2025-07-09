@@ -17,17 +17,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int h = 0;
 	char *fusion;
 
-	if (s1 == NULL && s2 == NULL)
-	{
-		return (NULL);
-	}
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	for (; s1[i] ; i++)
-	{
-	}
+	{}
 	for (; s2[j] ; j++)
-	{
-	}
-	h = j + i;
+	{}
 
 	if (j <= n)
 	{
@@ -48,5 +45,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		fusion[h] = s2[j];
 		h++;
 	}
+	fusion[h + 1] = '\0';
+
 	return (fusion);
 }
