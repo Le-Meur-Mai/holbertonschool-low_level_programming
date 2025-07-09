@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 /**
  * string_nconcat- combine two strings together
  * string_nconcat: combine s1 and the first n bytes of s2
@@ -13,14 +12,20 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i = strlen(s1);
-	unsigned int j = strlen(s2);
+	unsigned int i = 0;
+	unsigned int j = 0;
 	unsigned int h = 0;
 	char *fusion;
 
 	if (s1 == NULL && s2 == NULL)
 	{
 		return (NULL);
+	}
+	for (; s1[i] ; i++)
+	{
+	}
+	for (; s2[j] ; j++)
+	{
 	}
 	h = j + i;
 
