@@ -1,1 +1,1 @@
-Pointers and arrays
+Exercises on pointers and arrays in c.
