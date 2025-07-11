@@ -3,7 +3,7 @@
 #include<stdio.h>
 
 /**
- * main - Entry point
+ * main - print the alphabet backwards
  *
  * Return: Always 0 (Success)
  */

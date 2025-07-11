@@ -3,7 +3,7 @@
 #include<stdio.h>
 
 /**
- * main - Entry point
+ * main - print numbers from 0 to 9 with space and dots
  *
  * Return: Always 0 (Success)
  */

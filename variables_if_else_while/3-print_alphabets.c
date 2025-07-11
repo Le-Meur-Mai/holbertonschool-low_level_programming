@@ -3,7 +3,7 @@
 #include<stdio.h>
 
 /**
- * main - Entry point
+ * main - replace A by e and a by i
  *
  * Return: Always 0 (Success)
  */

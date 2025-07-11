@@ -3,7 +3,7 @@
 #include<stdio.h>
 
 /**
- * main - Entry point
+ * main - Print the alphabet without e and q
  *
  * Return: Always 0 (Success)
  */
