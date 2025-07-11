@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * print_last_digit- print
+ * print_last_digit- print the last digit of a number
  * @n: result
  * absolute_value : read the name
  * Return: The absolute value of 'n'

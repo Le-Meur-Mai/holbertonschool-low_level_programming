@@ -2,7 +2,7 @@
 #include <ctype.h>
 
 /**
- * _islower - print the alphabet
+ * _islower - checked if the character is a lowercase letter
  *
  * @c: The character to be checked.
  *

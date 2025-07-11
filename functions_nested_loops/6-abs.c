@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _abs - print the alphabet
+ * _abs - return the absolute number of n.
  * _abs: check the absolute value of 'n'
  * @r: Whats have to be checked.
  * absolute_value : read the name
