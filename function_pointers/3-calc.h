@@ -4,6 +4,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 /**
  * struct op- structure of the operation
  * struct op: structure of the operation
