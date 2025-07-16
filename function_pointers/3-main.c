@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-	printf("ERROR\n");
+	printf("Error\n");
 	exit(98);
 	}
 
@@ -28,8 +28,14 @@ int main(int argc, char *argv[])
 
 	if (operation == NULL)
 	{
-		printf("ERROR\n");
+		printf("Error\n");
 		exit(99);
+	}
+
+	if (nb2 == 0 && (operation == op_div || operation == op_mod))
+	{
+		printf("Error\n");
+		exit(100);
 	}
 
 	result = operation(nb1, nb2);
