@@ -10,9 +10,9 @@ void print_all(const char * const format, ...)
 	char *s;
 
 	va_start(print, format);
-	while (format[j] != '\0')
+	while (format != NULL && format[j] != '\0')
 	{
-		if (j != 0 && comma != 0 && (format[j] == 's' || format[j] == 'c' ||
+		if (comma > 0 && (format[j] == 's' || format[j] == 'c' ||
 		format[j] == 'f' || format[j] == 'i'))
 			printf(", ");
 		switch (format[j])
