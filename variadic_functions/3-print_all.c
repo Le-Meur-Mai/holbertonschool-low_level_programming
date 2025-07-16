@@ -7,17 +7,18 @@
 void print_all(const char * const format, ...)
 {
 	va_list print;
-	int j = 0;
+	int j = 0, lenght = 0;
 	char *s;
 
+	while (format[lenght] != '\0')
+		lenght++;
 	va_start(print, format);
 
 	while (format[j] != '\0')
 	{
-		if (j != 0 && (format[j] == 's' || format[j] == 'c' ||
-		format[j] == 'f' || format[j] == 'i'))
+		if (j != 0 && j < (lenght - 1) && (format[j - 1] == 's' ||
+		format[j - 1] == 'c' || format[j - 1] == 'f' || format[j - 1] == 'i'))
 			printf(", ");
-
 		switch (format[j])
 		{
 			case 'c':
@@ -30,7 +31,6 @@ void print_all(const char * const format, ...)
 				printf("%f", va_arg(print, double));
 				break;
 			case 's':
-			{
 				s = va_arg(print, char *);
 
 				if (s[0] == '\0')
@@ -40,7 +40,6 @@ void print_all(const char * const format, ...)
 				}
 				printf("%s", s);
 				break;
-			}
 		}
 		j++;
 	}
