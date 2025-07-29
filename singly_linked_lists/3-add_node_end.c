@@ -20,16 +20,15 @@ int _strlen(const char *str)
 	return (i);
 }
 /**
- * add_node- Adding a node to a single linked list,
- * you have to free the space memory in another file.
- * @head: pointer that point to the pointer of the new node
- * @str: string you want stock in your new node
- * Return: the pointer that point to the new node
+ * add_node_end- adding a node at the end of a single linked list
+ * @head: pointer that point to the first node of the list
+ * @str: string you want in your node
+ * Return: A pointer to the new node
  */
-
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new;
+	list_t *temp;
 
 	new = malloc(sizeof(list_t));
 
@@ -37,11 +36,23 @@ list_t *add_node(list_t **head, const char *str)
 	{
 		return (NULL);
 	}
-
 	new->str = strdup(str);
 	new->len = _strlen(str);
-	new->next = *head;
+	new->next = NULL;
+	if (*head == NULL)
+	{
 	*head = new;
+	}
+	else
+	{
+		temp = *head;
+
+		while (temp->next != NULL)
+		{
+			temp = temp->next;
+		}
+		temp->next = new;
+	}
 
 	return (new);
 }
