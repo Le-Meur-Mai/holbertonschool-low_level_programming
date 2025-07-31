@@ -12,12 +12,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buffer;
 	int success = 0;
+	ssize_t bytes_written = 0;
 	ssize_t counting = 0;
 
 	if (filename == NULL || letters <= 0)
 		return (0);
 
 	buffer = malloc(letters);
+	if (buffer == NULL)
+		return (0);
 
 	success = open(filename, O_RDONLY);
 
@@ -35,15 +38,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	success = 0;
-
-	success = write(1, buffer, counting);
+	bytes_written = write(1, buffer, counting);
 
 	free(buffer);
 	close(success);
 
-	if (success == -1 || success != counting)
+	if (bytes_written < 0 || bytes_written != counting)
 		return (0);
 
-	return (counting);
+	return (bytes_written);
 }
