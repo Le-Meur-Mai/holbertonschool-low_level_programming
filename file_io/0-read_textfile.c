@@ -11,9 +11,9 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buffer;
-	int success = 0;
+	int file_descriptor = 0;
 	ssize_t bytes_written = 0;
-	ssize_t counting = 0;
+	ssize_t bytes_read = 0;
 
 	if (filename == NULL || letters <= 0)
 		return (0);
@@ -22,28 +22,30 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buffer == NULL)
 		return (0);
 
-	success = open(filename, O_RDONLY);
+	file_descriptor = open(filename, O_RDONLY);
 
-	if (success == -1)
+	if (file_descriptor == -1)
 	{
 		free(buffer);
+		close(file_descriptor);
 		return (0);
 	}
 
-	counting = read(success, buffer, letters);
+	bytes_read = read(file_descriptor, buffer, letters);
 
-	if (counting == -1)
+	if (bytes_read == -1)
 	{
 		free(buffer);
+		close(file_descriptor);
 		return (0);
 	}
 
-	bytes_written = write(1, buffer, counting);
+	bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
 
 	free(buffer);
-	close(success);
+	close(file_descriptor);
 
-	if (bytes_written < 0 || bytes_written != counting)
+	if (bytes_written < 0 || bytes_written != bytes_read)
 		return (0);
 
 	return (bytes_written);
