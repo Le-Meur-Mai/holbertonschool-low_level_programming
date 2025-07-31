@@ -18,17 +18,22 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	buffer = malloc(letters);
-	if (buffer == NULL)
-		return(0);
-	
+
 	success = open(filename, O_RDONLY);
 
 	if (success == -1)
+	{
+		free(buffer);
 		return (0);
+	}
+
 	counting = read(success, buffer, letters);
 
 	if (counting == -1)
+	{
+		free(buffer);
 		return (0);
+	}
 
 	success = 0;
 
