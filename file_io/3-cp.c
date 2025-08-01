@@ -67,7 +67,6 @@ int cp_file(const char *file_from, const char *file_to)
 int main(int argc, char *argv[])
 {
 	int result = 0;
-	(void) *argv;
 
 	if (argc != 3)
 	{
