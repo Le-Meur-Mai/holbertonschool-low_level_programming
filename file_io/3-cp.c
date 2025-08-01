@@ -12,42 +12,41 @@
  */
 int cp_file(const char *file_from, const char *file_to)
 {
-	int file_descriptor, verification = 0;
-	char *buffer = malloc(1024);
+	int file_descriptor, fd_from, error = 0;
+	char *buffer[1024];
 	ssize_t bytes_read, bytes_written = 0;
+	mode_t old_umask;
 
-	file_descriptor = open(file_from, O_RDONLY);
-	if (file_descriptor == -1)
+	fd_from = open(file_from, O_RDONLY);
+	if (fd_from == -1)
 		return (1);
-	if (buffer == NULL)
-		return (1);
-	bytes_read = read(file_descriptor, buffer, 1024);
-	verification = close(file_descriptor);
+
+	bytes_read = read(fd_from, buffer, sizeof(buffer));
+	error = close(fd_from);
+
+	if (error == -1)
+		return (fd_from);
 	if (bytes_read == -1)
-	{
-		free(buffer);
 		return (1);
-	}
+
 	file_descriptor = open(file_to, O_WRONLY | O_TRUNC);
 	if (file_descriptor == -1)
 	{
-		file_descriptor = open(file_to, O_WRONLY | O_CREAT, 0662);
+		old_umask = umask(0);
+		file_descriptor = open(file_to, O_WRONLY | O_CREAT, 0664);
+		umask(old_umask);
+
 		if (file_descriptor == -1)
-		{
-			free(buffer);
 			return (2);
-		}
 	}
 	bytes_written = write(file_descriptor, buffer, bytes_read);
 	if (bytes_written != bytes_read || bytes_written == -1)
 	{
 		close(file_descriptor);
-		free(buffer);
 		return (2);
 	}
-	verification = close(file_descriptor);
-	free(buffer);
-	if (verification == -1)
+	error = close(file_descriptor);
+	if (error == -1)
 		return (file_descriptor);
 
 	return (0);
