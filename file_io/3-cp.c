@@ -34,7 +34,6 @@ int cp_file(const char *file_from, const char *file_to)
 		file_descriptor = open(file_to, O_WRONLY | O_CREAT, 0662);
 		if (file_descriptor == -1)
 		{
-			close(file_descriptor);
 			free(buffer);
 			return (2);
 		}
@@ -49,7 +48,7 @@ int cp_file(const char *file_from, const char *file_to)
 	verification = close(file_descriptor);
 	free(buffer);
 	if (verification == -1)
-		return (verification);
+		return (file_descriptor);
 
 	return (0);
 }
